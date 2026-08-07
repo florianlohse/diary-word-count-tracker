@@ -1,0 +1,4 @@
+{
+  "pollIntervalSec": 4,
+  "idleThresholdSec": 4
+}
