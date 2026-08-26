@@ -1,0 +1,19 @@
+{
+  "name": "diary-word-count-tracker",
+  "version": "1.0.0",
+  "description": "Obsidian plugin: writes words_written frontmatter for notes under PRIVATE/Diary on an idle-gated poll loop.",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "node esbuild.config.mjs production",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "author": "Florian Lohse",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "vitest": "^3.0.0"
+  }
+}
