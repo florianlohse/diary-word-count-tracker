@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "tool_id": "diary-word-count-tracker",
+  "name": "diary-word-count-tracker",
+  "kind": "obsidian-plugin",
+  "summary": "Obsidian plugin that writes a words_written frontmatter field to notes under a target folder (default PRIVATE/Diary) on an idle-gated poll loop.",
+  "lifecycle": {
+    "status": "active",
+    "maturity": "usable"
+  },
+  "capabilities": [
+    {
+      "id": "word-count",
+      "name": "Word count to frontmatter",
+      "status": "stable",
+      "description": "Counts words with frontmatter and an optional footer stripped and writes words_written when the count changed."
+    },
+    {
+      "id": "idle-gated-poll",
+      "name": "Idle-gated poll loop",
+      "status": "stable",
+      "description": "Polls the active note and writes only after the idle threshold."
+    },
+    {
+      "id": "scope-and-footer",
+      "name": "Target folder and footer marker",
+      "status": "stable",
+      "description": "Configurable whole-folder scope and a whole-line footer marker excluded from the count (in the Unreleased section of the changelog, after 1.0.0)."
+    },
+    {
+      "id": "cursor-restore",
+      "name": "Cursor and scroll restore",
+      "status": "stable",
+      "description": "Fixes the iOS jump to the top of the note after each automatic update."
+    },
+    {
+      "id": "unit-tests",
+      "name": "Unit tests",
+      "status": "stable",
+      "description": "Vitest suite on the pure core logic."
+    }
+  ],
+  "interfaces": [
+    {
+      "type": "obsidian-plugin",
+      "status": "stable",
+      "description": "Obsidian community-plugin manifest."
+    }
+  ],
+  "platforms": [
+    "obsidian-desktop",
+    "obsidian-mobile"
+  ],
+  "limitations": [
+    {
+      "id": "split-view-ambiguity",
+      "description": "getActiveFile() does not disambiguate the active pane in a split view.",
+      "status": "open"
+    },
+    {
+      "id": "multi-device-last-write-wins",
+      "description": "No merge logic if two devices write words_written before syncing.",
+      "status": "open"
+    },
+    {
+      "id": "poll-lag",
+      "description": "A change can lag by up to one poll interval.",
+      "status": "open"
+    }
+  ],
+  "review": {
+    "last_reviewed": "2026-10-01"
+  }
+}
